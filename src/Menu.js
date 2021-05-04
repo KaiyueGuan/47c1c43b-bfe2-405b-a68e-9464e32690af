@@ -22,6 +22,13 @@ class Menu extends React.Component{
             });
     }
 
+    onSelectCategory = (short_name) => {
+        return (event) => {
+            event.preventDefault();
+            this.setState({selectedCategory: short_name});
+        }
+    }
+
     render() {
         const {categories, selectedCategory, itemsInCategory, menuFetchError} = this.state;
 
@@ -29,7 +36,7 @@ class Menu extends React.Component{
             <div>
                 <h4>Menu Categories</h4>
                 <div className={'container'}>
-                    <CategoryList categories={categories}/>
+                    <CategoryList handleClick={this.onSelectCategory} categories={categories}/>
                 </div>
             </div>
         );

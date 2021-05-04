@@ -2,14 +2,14 @@ import React from "react";
 
 class CategoryList extends React.Component{
     render() {
-        const categories = this.props.categories;
+        const {categories, handleClick} = this.props;
         return (
             <div>
                 <ul>
                     {categories.map(value => {
                         const {id, name, short_name} = value;
                         return (
-                            <li key={id}>
+                            <li key={id} onClick={handleClick(short_name)}>
                                 {`${name} - (${short_name})`}
                             </li>
                         );
