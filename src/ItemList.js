@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+import './ItemList.css';
+
 class ItemList extends React.Component {
     state = {
         short_name: this.props.short_name,
@@ -21,7 +23,7 @@ class ItemList extends React.Component {
     render() {
         const {short_name, itemList} = this.state;
         return (
-            <div>
+            <div className={'items'}>
                 <div>{`Items in Category: (${short_name})`}</div>
                 <table>
                     <thead>

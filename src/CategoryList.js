@@ -1,10 +1,11 @@
 import React from "react";
+import './CategoryList.css';
 
 class CategoryList extends React.Component{
     render() {
         const {categories, handleClick} = this.props;
         return (
-            <div>
+            <div className={'categories'}>
                 <ul>
                     {categories.map(value => {
                         const {id, name, short_name} = value;
