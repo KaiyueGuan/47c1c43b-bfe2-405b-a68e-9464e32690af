@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 
 import CategoryList from "./CategoryList";
+import ItemList from "./ItemList";
 
 class Menu extends React.Component{
     state = {
@@ -37,6 +38,7 @@ class Menu extends React.Component{
                 <h4>Menu Categories</h4>
                 <div className={'container'}>
                     <CategoryList handleClick={this.onSelectCategory} categories={categories}/>
+                    {selectedCategory && <ItemList short_name={selectedCategory} key={selectedCategory}/>}
                 </div>
             </div>
         );
