@@ -4,6 +4,8 @@ import axios from "axios";
 import CategoryList from "./CategoryList";
 import ItemList from "./ItemList";
 
+import './Menu.css';
+
 class Menu extends React.Component{
     state = {
         categories:[],
